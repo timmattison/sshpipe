@@ -1,0 +1,19 @@
+#!/usr/bin/env expect -f
+
+# Log in with SSH pipe using the host, username, and password that is in the environment
+spawn ./sshpipe.py $env(HOST) $env(USERNAME) $env(PASSWORD)
+
+# Wait for the prompt
+expect "ubuntu"
+
+# Send su
+send "su\r"
+
+# Wait for the password prompt
+expect "assword:"
+
+# Send our clever password
+send "password\r"
+
+# Let the user go crazy
+interact

@@ -1,0 +1,8 @@
+#!/usr/bin/expect -f
+spawn ssh tim@10.211.55.7
+expect "assword:"
+send "password\r"
+expect "ubuntu"
+send "su\r"
+expect "assword:"
+send "password\r"
